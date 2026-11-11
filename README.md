@@ -1,5 +1,7 @@
 # H3C iNode VPN 客户端 Docker 镜像
 
+[![build-and-push](https://github.com/pingod/docker-h3c-inode-client/actions/workflows/docker-build-push.yml/badge.svg)](https://github.com/pingod/docker-h3c-inode-client/actions/workflows/docker-build-push.yml)
+
 多架构（amd64/arm64）的 H3C iNode 智能客户端容器：KasmVNC 网页远程桌面 + iNode 客户端 + Dante SOCKS5 代理。
 
 ![H3C iNode Client](./assets/figure.png)
