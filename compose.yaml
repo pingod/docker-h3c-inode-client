@@ -1,0 +1,18 @@
+services:
+  h3c-inode:
+    image: ghcr.io/pingod/docker-h3c-inode-client:latest
+    container_name: h3c-inode
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    ports:
+      - "5901:5901"
+      - "1080:1080"
+    environment:
+      USER: myuser
+      PASSWORD: mypassword
+      GEOMETRY: 1280x720
+    volumes:
+      - ./vpn_data:/opt/apps/com.client.inode.amd/files/clientfiles/7000
+    restart: unless-stopped

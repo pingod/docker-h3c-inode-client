@@ -65,24 +65,10 @@ arm64 设备把卷路径换成 `/opt/apps/com.client.inode.arm/files/clientfiles
 
 ### docker-compose
 
-```yaml
-services:
-  h3c-inode:
-    image: ghcr.io/pingod/docker-h3c-inode-client:latest
-    container_name: h3c-inode
-    cap_add:
-      - NET_ADMIN
-    devices:
-      - /dev/net/tun
-    ports:
-      - "5901:5901"
-      - "1080:1080"
-    environment:
-      USER: myuser
-      PASSWORD: mypassword
-    volumes:
-      - ./vpn_data:/opt/apps/com.client.inode.amd/files/clientfiles/7000
-    restart: unless-stopped
+仓库自带 `compose.yaml`，按需修改 `USER` / `PASSWORD` 与卷路径后：
+
+```bash
+docker compose up -d
 ```
 
 ## 使用流程
